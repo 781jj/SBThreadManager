@@ -22,7 +22,7 @@ static SBTaskManager* manager = nil;
         {
             manager = [[self alloc] init];
             manager.taskList = [NSMutableArray array];
-            [NSThread detachNewThreadSelector:@selector(run) toTarget:self withObject:nil];
+            [NSThread detachNewThreadSelector:@selector(run) toTarget:manager withObject:nil];
         }
     }
     return manager;
@@ -48,7 +48,9 @@ static SBTaskManager* manager = nil;
                     }
                 }
                 if (task.callBack) {
-                    task.callBack(task.name,isFinish);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        task.callBack(task.name,isFinish);
+                    });
                 }
                 [_taskList removeObject:task];
                 break;

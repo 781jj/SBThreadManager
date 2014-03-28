@@ -18,12 +18,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *imageurl = @"http://imgt4.bdstatic.com/it/u=73152088,4257789766&fm=23&gp=0.jpg";
+
+    NSString *imageurl = @"http://www.kutx.cn/xiaotupian/icons/png/200803/20080327095245737.png";
     for (int i = 0; i<100; i++) {
         SBImageTask *task = [[SBImageTask alloc] initWithImageUrl:imageurl finishCallBack:^(NSString *name,BOOL finish){
             NSLog(@"finish,%@,%d",name,finish);
         }];
         task.name = [NSString stringWithFormat:@"task--%d",i];
+        [[SBTaskManager shareInstance] addTask:task];
     }
 // Do any additional setup after loading the view, typically from a nib.
 }

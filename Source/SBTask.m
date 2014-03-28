@@ -19,6 +19,10 @@
     
 }
 
+- (BOOL)isConcurrent
+{
+    return NO;
+}
 
 - (BOOL)isFinished
 {

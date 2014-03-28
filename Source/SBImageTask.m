@@ -22,6 +22,10 @@
 }
 
 
+- (BOOL)isConcurrent
+{
+    return YES;
+}
 
 - (void)start
 {

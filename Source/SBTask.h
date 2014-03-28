@@ -18,8 +18,8 @@ typedef void (^SBTaskCallBack)(NSString *,BOOL isFinish);
 //must done
 - (void)start;
 - (BOOL)isFinished;
-- (BOOL)isExecuting;
 - (BOOL)isReady;
+- (BOOL)isConcurrent;
 
 - (void)cancle;
 - (BOOL)isCancle;
