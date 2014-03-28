@@ -9,6 +9,7 @@
 #import "SBImageTask.h"
 @interface SBImageTask ()
 @property (nonatomic,strong)UIImage *image;
+@property (nonatomic,assign)BOOL isRun;
 @end
 @implementation SBImageTask
 - (id)initWithImageUrl:(NSString *)url finishCallBack:(SBTaskCallBack)callback
@@ -30,6 +31,13 @@
 - (void)start
 {
     self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imageUrl]]];
+    _isRun = YES;
+}
+
+
+- (BOOL)isExecuting
+{
+    return _isRun;
 }
 
 - (BOOL)isReady
