@@ -15,15 +15,17 @@ typedef void (^SBTaskCallBack)(NSString *,BOOL isFinish);
 @property (nonatomic,copy)SBTaskCallBack callBack;
 @property (nonatomic,assign)unsigned priority;
 
-//must done
+
 - (void)start;
 - (void)main;
+- (void)cancle;
+
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (BOOL)isReady;
 - (BOOL)isConcurrent;
-
-- (void)cancle;
 - (BOOL)isCancle;
+
+
 
 @end
