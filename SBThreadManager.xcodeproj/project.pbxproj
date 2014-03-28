@@ -21,6 +21,9 @@
 		3DBE368E18E5B4C100BB870D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DBE367018E5B4C100BB870D /* UIKit.framework */; };
 		3DBE369618E5B4C100BB870D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DBE369418E5B4C100BB870D /* InfoPlist.strings */; };
 		3DBE369818E5B4C100BB870D /* SBThreadManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE369718E5B4C100BB870D /* SBThreadManagerTests.m */; };
+		3DBE36A418E5B67900BB870D /* SBTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE36A318E5B67900BB870D /* SBTaskManager.m */; };
+		3DBE36A718E5B6D000BB870D /* SBTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE36A618E5B6D000BB870D /* SBTask.m */; };
+		3DBE36AA18E5C0F600BB870D /* SBImageTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DBE36A918E5C0F600BB870D /* SBImageTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,12 @@
 		3DBE369318E5B4C100BB870D /* SBThreadManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SBThreadManagerTests-Info.plist"; sourceTree = "<group>"; };
 		3DBE369518E5B4C100BB870D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3DBE369718E5B4C100BB870D /* SBThreadManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SBThreadManagerTests.m; sourceTree = "<group>"; };
+		3DBE36A218E5B67900BB870D /* SBTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBTaskManager.h; path = Source/SBTaskManager.h; sourceTree = "<group>"; };
+		3DBE36A318E5B67900BB870D /* SBTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBTaskManager.m; path = Source/SBTaskManager.m; sourceTree = "<group>"; };
+		3DBE36A518E5B6D000BB870D /* SBTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBTask.h; path = Source/SBTask.h; sourceTree = "<group>"; };
+		3DBE36A618E5B6D000BB870D /* SBTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBTask.m; path = Source/SBTask.m; sourceTree = "<group>"; };
+		3DBE36A818E5C0F600BB870D /* SBImageTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBImageTask.h; path = Source/SBImageTask.h; sourceTree = "<group>"; };
+		3DBE36A918E5C0F600BB870D /* SBImageTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBImageTask.m; path = Source/SBImageTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +165,12 @@
 		3DBE36A118E5B4CC00BB870D /* SBThread */ = {
 			isa = PBXGroup;
 			children = (
+				3DBE36A518E5B6D000BB870D /* SBTask.h */,
+				3DBE36A618E5B6D000BB870D /* SBTask.m */,
+				3DBE36A218E5B67900BB870D /* SBTaskManager.h */,
+				3DBE36A318E5B67900BB870D /* SBTaskManager.m */,
+				3DBE36A818E5C0F600BB870D /* SBImageTask.h */,
+				3DBE36A918E5C0F600BB870D /* SBImageTask.m */,
 			);
 			name = SBThread;
 			sourceTree = "<group>";
@@ -258,6 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DBE368318E5B4C100BB870D /* ViewController.m in Sources */,
+				3DBE36A418E5B67900BB870D /* SBTaskManager.m in Sources */,
+				3DBE36A718E5B6D000BB870D /* SBTask.m in Sources */,
+				3DBE36AA18E5C0F600BB870D /* SBImageTask.m in Sources */,
 				3DBE367D18E5B4C100BB870D /* AppDelegate.m in Sources */,
 				3DBE367918E5B4C100BB870D /* main.m in Sources */,
 			);
