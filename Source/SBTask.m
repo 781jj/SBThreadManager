@@ -7,17 +7,30 @@
 //
 
 #import "SBTask.h"
-
+@interface SBTask()
+@property (nonatomic,assign)BOOL isExecuting;
+@end
 @implementation SBTask
 - (void)start
 {
    
 }
 
+- (void)main
+{
+    
+}
+
 - (void)cancle
 {
     
 }
+
+- (BOOL)isExecuting
+{
+    return NO;
+}
+
 
 - (BOOL)isConcurrent
 {

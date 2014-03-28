@@ -39,19 +39,25 @@ static SBTaskManager* manager = nil;
         for (SBTask *task in _taskList) {
             if ([task isReady]) {
                 [task start];
-                BOOL isFinish = YES;
-                while (![task isFinished]) {
-                    if([task isCancle]){
-                        isFinish = NO;
-                        [task cancle];
-                        break;
+                if (![task isConcurrent]) {
+                    [task main];
+                    BOOL isFinish = YES;
+                    while (![task isFinished]) {
+                        if([task isCancle]){
+                            isFinish = NO;
+                            [task cancle];
+                            break;
+                        }
                     }
+                    if (task.callBack) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            task.callBack(task.name,isFinish);
+                        });
+                    }
+                }else{
+                    [NSThread detachNewThreadSelector:@selector(runConcurrent:) toTarget:self withObject:task];
                 }
-                if (task.callBack) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        task.callBack(task.name,isFinish);
-                    });
-                }
+                
                 [_taskList removeObject:task];
                 break;
             }else{
@@ -61,6 +67,28 @@ static SBTaskManager* manager = nil;
     }
 }       
 
+
+- (void)runConcurrent:(SBTask *)task
+{
+    
+    while(![[task valueForKey:@"isExecuting"] boolValue]){
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    }
+    [task main];
+    BOOL isFinish = YES;
+    while (![task isFinished]) {
+        if([task isCancle]){
+            isFinish = NO;
+            [task cancle];
+            break;
+        }
+    }
+    if (task.callBack) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            task.callBack(task.name,isFinish);
+        });
+    }
+}
 
 - (void)addTask:(SBTask *)task
 {
