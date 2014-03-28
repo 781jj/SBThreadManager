@@ -82,6 +82,7 @@
 		3DBE366018E5B4C100BB870D = {
 			isa = PBXGroup;
 			children = (
+				3DBE36A118E5B4CC00BB870D /* SBThread */,
 				3DBE367218E5B4C100BB870D /* SBThreadManager */,
 				3DBE369118E5B4C100BB870D /* SBThreadManagerTests */,
 				3DBE366B18E5B4C100BB870D /* Frameworks */,
@@ -150,6 +151,13 @@
 				3DBE369418E5B4C100BB870D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DBE36A118E5B4CC00BB870D /* SBThread */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SBThread;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
