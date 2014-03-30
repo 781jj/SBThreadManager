@@ -55,7 +55,9 @@ static SBTaskManager* manager = nil;
                         });
                     }
                 }else{
-                    [NSThread detachNewThreadSelector:@selector(runConcurrent:) toTarget:self withObject:task];
+                    @autoreleasepool {
+                        [NSThread detachNewThreadSelector:@selector(runConcurrent:) toTarget:self withObject:task];
+                    }
                 }
                 
                 [_taskList removeObject:task];
